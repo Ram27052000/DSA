@@ -1,19 +1,21 @@
 public class LargeNumber {
 
-    public static void main(String[] args){
-        int[] nums = {3,3,6,8};
-        if(nums.length == 1){
-            System.out.println(nums[0]);
-            return;
+    private static int largeNumber(int[] arr){
+        if(arr.length == 1){
+            return arr[0]; 
         }
-        int max = nums[0];
-        for(int i=1; i<nums.length ;i++){
-
-            if(max < nums[i]){
-                max = nums[i];
+        int max = arr[0];
+        for(int i=1; i<arr.length ;i++){
+            if(max < arr[i]) {
+                max = arr[i];
             }
-            System.out.println("max" +max);
         }
+        return max;
+    }
 
+    public static void main(String[] args){
+        int [] arr = {1,2,3,15,5,6,7,8};
+        int largeNumber = largeNumber(arr);
+        System.out.println(largeNumber);
     }
 }
